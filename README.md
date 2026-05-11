@@ -1,158 +1,59 @@
-# 🏦 Bank Management System (C++ CLI)
+# 🏦 High-Integrity Bank Management System (C++)
 
-A fully functional **Bank Management System** built in **C++** with a rich terminal UI (colors, tables, and formatted output).
-This project supports **Admin Panel** and **Customer Panel** with secure PIN-based operations and transaction logging.
-
----
-
-## ✨ Features
-
-### 🔐 Admin Panel
-
-* Secure login system (username + password)
-* Add new customer accounts
-* View all accounts in table format
-* Deposit & Withdraw from any account
-* View all transactions
-* Search accounts
-* Delete accounts (**no PIN required**)
-* Add new admin users
+**A robust, modular banking ecosystem engineered in C++ utilizing Object-Oriented Programming (OOP) to handle secure financial transactions and administrative workflows.**
 
 ---
 
-### 👤 Customer Panel
-
-* Access using account number
-* View personal account details
-* Deposit & Withdraw money (PIN required)
-* View own transactions
-* Delete own account (**PIN required**)
+## 🚀 Engineering Overview
+This system is designed with a focus on data integrity and secure state management. It features a dual-panel architecture (Admin/Customer) and implements custom logic for transaction synchronization and record persistence.
 
 ---
 
-### 🔒 Security Features
+## 🔐 Core Technical Features
 
-* Password & PIN hashing
-* Hidden password input (masked with `*`)
-* PIN attempt limit (3 tries)
-* Temporary account lock (30 seconds after failed attempts)
+### **Administrative Control & Audit**
+* **Secure Authentication:** Implements username/password verification for full system access.
+* **Centralized Management:** Functionality for account creation, deletion, and cross-account transaction monitoring.
+* **Audit Logging:** Global transaction history tracking to ensure financial transparency.
 
----
+### **Customer-Facing Logic**
+* **Identity Verification:** Account access secured via unique account numbers and PIN-based validation.
+* **Transactional Integrity:** Secure deposit and withdrawal logic with real-time balance updates.
+* **Self-Service Actions:** Customers can manage personal records or initiate account closure with PIN-authorized security.
 
-### 📊 Data Management
-
-* Data stored in CSV files:
-
-  * `data.csv` → customer records
-  * `pins.csv` → hashed PINs
-  * `user.csv` → admin credentials
-  * `transactions.csv` → transaction history
-
----
-
-### 🎨 UI Features
-
-* Colored terminal interface
-* Structured tables for accounts & transactions
-* Clean navigation menus
-* Cross-platform support (Windows/Linux)
+### **Security & Performance Architecture**
+* **Cryptographic Logic:** Implementation of PIN and password hashing to prevent plain-text data exposure.
+* **Input Masking:** Hidden character input for sensitive credentials in the terminal interface.
+* **Throttling Logic:** Automated account locking mechanism (30-second cooldown) after three failed authentication attempts to mitigate brute-force risks.
 
 ---
 
-## 🛠️ Technologies Used
-
-* C++
-* STL (map, vector, stringstream, etc.)
-* File Handling (CSV-based storage)
-* Terminal control (ANSI colors)
-
----
-
-## 🚀 How to Run
-
-### 🔹 Compile
-
-```bash
-g++ main.cpp -o bank
-```
-
-### 🔹 Run
-
-```bash
-./bank
-```
+## 🛠️ Technical Stack
+* **Language:** C++
+* **Standard Template Library (STL):** Utilized for efficient data handling (maps, vectors, stringstreams).
+* **Persistence Layer:** Structured CSV-based storage (`data.csv`, `pins.csv`, `user.csv`, `transactions.csv`).
+* **Interface:** ANSI-compliant terminal UI for cross-platform (Windows/Linux) compatibility.
 
 ---
 
-## 🧠 How It Works
-
-1. On start, choose:
-
-   * Admin Login
-   * Customer Access
-
-2. Admin:
-
-   * Must login
-   * Gets full system control
-
-3. Customer:
-
-   * Enters account number
-   * Can perform limited operations
+## 📂 System Logic
+1. **Compilation:** `g++ main.cpp -o bank`
+2. **Persistence:** On startup, the system parses existing CSV records into memory-efficient data structures.
+3. **Operations:** Transactions are validated against hashed PINs before being committed to the permanent log.
 
 ---
 
-## 🔥 Special Logic
-
-### 🗑️ Account Deletion Rules
-
-| User Type | PIN Required |
-| --------- | ------------ |
-| Admin     | ❌ No         |
-| Customer  | ✅ Yes        |
+## 🧑‍💻 Developed By: Team Code Catalyst
+* **Anuruddha Kumar Kahar**
+* **Purohit Kamleshsingh Savalsingh**
+* **Aayush Singh**
+* **Shrimali Jainam Ravindrakumar**
+* **Joshi Rudram Manojbhai**
 
 ---
 
-## 📂 Project Structure
-
-```
-📁 Project Folder
- ├── main.cpp
- ├── data.csv
- ├── pins.csv
- ├── user.csv
- └── transactions.csv
-```
+## ⚠️ Disclaimer
+This is a simulation for **educational and architectural research purposes**. While it implements security best practices like hashing and locking, it is not intended for real-world financial deployment.
 
 ---
-
-## 💡 Future Improvements
-
-* GUI version (Windows app)
-* Online database integration
-* Customer login via PIN instead of account number
-* Email/SMS notifications
-* Advanced analytics dashboard
-
----
-
-## 👨‍💻 Author
-
-Developed as a **CLI-based banking simulation system** with focus on:
-
-* Clean UI
-* Security
-* Structured data handling
-
----
-
-## ⭐ Support
-
-If you like this project:
-
-* ⭐ Star the repo
-* 🍴 Fork it
-* 🚀 Improve it
-
----
+*"Engineering robust solutions today for the challenges of tomorrow."*
